@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:pretty_example/features/catalog/presentation/widgets/widgets.dart';
 
 /// {@template filter_body}
 /// Тело экрана "Фильтр"
 /// {@endtemplate}
 @immutable
 class FilterBody extends StatelessWidget {
+  /// {@macro on_all_materials_tap}
+  final VoidCallback onAllMaterialsTap;
+
+  /// {@macro on_only_with_discount_changed}
+  final ValueChanged<bool> onOnlyWithDiscountChanged;
+
   /// {@macro filter_body}
   const FilterBody({
+    required this.onAllMaterialsTap,
+    required this.onOnlyWithDiscountChanged,
     Key? key,
   }) : super(key: key);
 
@@ -15,11 +24,62 @@ class FilterBody extends StatelessWidget {
         physics: const ClampingScrollPhysics(),
         slivers: [
           // Тело экрана
-          const SliverFillRemaining(
-            hasScrollBody: false,
+          SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Placeholder(),
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Размер
+                  FilterSection(
+                    title: 'Размер',
+                    child: FilterWrap(
+                      itemCount: 12,
+                      itemBuilder: (context, index) => FilterCard(
+                        text: '41',
+                        isSelected: index == 1,
+                      ),
+                    ),
+                  ),
+
+                  // Разделитель
+                  const FilterDivider(
+                      padding: EdgeInsets.symmetric(vertical: 16)),
+
+                  // Цвет
+                  FilterSection(
+                    title: 'Цвет',
+                    child: FilterWrap(
+                      itemCount: 7,
+                      itemBuilder: (context, index) =>
+                          FilterCard(text: 'Белый', isSelected: index == 0),
+                    ),
+                  ),
+                  // Разделитель
+                  const FilterDivider(padding: EdgeInsets.only(top: 16)),
+
+                  // Материал
+                  FilterSection(
+                    title: 'Материал',
+                    onAllTap: () {},
+                    child: FilterWrap(
+                      itemCount: 12,
+                      itemBuilder: (context, index) => FilterCard(
+                        text: 'Хлопок',
+                        isSelected: index == 4,
+                      ),
+                    ),
+                  ),
+
+                  // Разделитель
+                  const FilterDivider(
+                      padding: EdgeInsets.symmetric(vertical: 16)),
+
+                  // Только со скидкой
+                  FilterOnlyWithDiscountSwitch(
+                      onChanged: onOnlyWithDiscountChanged, isEnabled: true),
+                ],
+              ),
             ),
           ),
 

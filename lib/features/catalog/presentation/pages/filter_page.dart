@@ -18,8 +18,14 @@ class FilterPage extends StatelessWidget {
           scrolledUnderElevation: 8.0,
           shadowColor: Colors.black.withOpacity(.3),
           surfaceTintColor: Colors.transparent,
+          actions: [
+            FilterResetButton(onTap: _resetFilter),
+          ],
         ),
-        body: const FilterBody(),
+        body: FilterBody(
+          onAllMaterialsTap: _onAllMaterialsTap,
+          onOnlyWithDiscountChanged: _onOnlyWithDiscountChanged,
+        ),
         floatingActionButton: FilterApplyButton(
           onTap: () => _applyFilter(context),
         ),
@@ -28,4 +34,18 @@ class FilterPage extends StatelessWidget {
 
   /// Применяет фильтр
   void _applyFilter(BuildContext context) => Navigator.of(context).pop();
+
+  /// Сбрасывает фильтр
+  Future<void> _resetFilter() => Future<void>.value();
+
+  /// {@template on_all_materials_tap}
+  /// Обработчик нажатия н кнопку "Все" в секции "Материал"
+  /// {@endtemplate}
+  Future<void> _onAllMaterialsTap() => Future<void>.value();
+
+  /// {@template on_only_with_discount_changed}
+  /// Обрбаотчик на смену значения свитча "Только со скидкой"
+  /// {@endtemplate}
+  Future<void> _onOnlyWithDiscountChanged(bool isOnlyWithDiscount) =>
+      Future<void>.value();
 }
