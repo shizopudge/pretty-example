@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_section}
 /// Секция фильтра
-/// {@endtemplate}
 @immutable
 class FilterSection extends StatelessWidget {
   /// Заголовок
@@ -14,7 +12,7 @@ class FilterSection extends StatelessWidget {
   /// Обработчик нажатия на кнпоку "Все"
   final VoidCallback? onAllTap;
 
-  /// {@macro filter_section}
+  /// Создает секцию фильтра
   const FilterSection({
     required this.title,
     required this.child,

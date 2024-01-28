@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_example/features/catalog/presentation/widgets/widgets.dart';
 
-/// {@template filter_body}
 /// Тело экрана "Фильтр"
-/// {@endtemplate}
 @immutable
 class FilterBody extends StatelessWidget {
   /// {@macro on_all_materials_tap}
@@ -12,7 +10,7 @@ class FilterBody extends StatelessWidget {
   /// {@macro on_only_with_discount_changed}
   final ValueChanged<bool> onOnlyWithDiscountChanged;
 
-  /// {@macro filter_body}
+  /// Создает тело экрана "Фильтр"
   const FilterBody({
     required this.onAllMaterialsTap,
     required this.onOnlyWithDiscountChanged,
@@ -43,7 +41,7 @@ class FilterBody extends StatelessWidget {
                   ),
 
                   // Разделитель
-                  const FilterDivider(
+                  const FilterSectionDivider(
                       padding: EdgeInsets.symmetric(vertical: 16)),
 
                   // Цвет
@@ -56,7 +54,7 @@ class FilterBody extends StatelessWidget {
                     ),
                   ),
                   // Разделитель
-                  const FilterDivider(padding: EdgeInsets.only(top: 16)),
+                  const FilterSectionDivider(padding: EdgeInsets.only(top: 16)),
 
                   // Материал
                   FilterSection(
@@ -72,7 +70,7 @@ class FilterBody extends StatelessWidget {
                   ),
 
                   // Разделитель
-                  const FilterDivider(
+                  const FilterSectionDivider(
                       padding: EdgeInsets.symmetric(vertical: 16)),
 
                   // Только со скидкой

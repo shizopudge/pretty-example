@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_wrap}
 /// Wrap на экране "Фильтр"
-/// {@endtemplate}
 @immutable
 class FilterWrap extends StatelessWidget {
   /// Количество элементов
@@ -11,7 +9,7 @@ class FilterWrap extends StatelessWidget {
   /// Конструктор
   final IndexedWidgetBuilder itemBuilder;
 
-  /// {@macro filter_wrap}
+  /// Создает wrap на экране "Фильтр"
   const FilterWrap({
     required this.itemCount,
     required this.itemBuilder,

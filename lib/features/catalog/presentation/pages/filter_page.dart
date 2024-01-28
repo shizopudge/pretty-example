@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_example/features/catalog/presentation/widgets/widgets.dart';
 
-/// {@template filter_page}
 /// Экран "Фильтр"
-/// {@endtemplate}
 @immutable
 class FilterPage extends StatelessWidget {
-  /// {@macro filter_page}
+  /// Создает экран "Фильтр"
   const FilterPage({
     Key? key,
   }) : super(key: key);

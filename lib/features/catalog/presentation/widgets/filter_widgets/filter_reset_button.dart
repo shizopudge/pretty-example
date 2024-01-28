@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_reset_button}
 /// Кнопка "Сбросить" на экране "Фильтр"
-/// {@endtemplate}
 @immutable
 class FilterResetButton extends StatelessWidget {
   /// Обработчик нажатия
   final VoidCallback onTap;
 
-  /// {@macro filter_reset_button}
+  /// Создает кнопку "Сбросить" на экране "Фильтр"
   const FilterResetButton({
     required this.onTap,
     Key? key,

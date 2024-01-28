@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pretty_example/features/catalog/presentation/pages/pages.dart';
 import 'package:pretty_example/features/catalog/presentation/widgets/widgets.dart';
 
-/// {@template catalog_page}
 /// Экран "Каталог"
-/// {@endtemplate}
 @immutable
 class CatalogPage extends StatefulWidget {
-  /// {@macro catalog_page}
+  /// Создает экран "Каталог"
   const CatalogPage({
     Key? key,
   }) : super(key: key);

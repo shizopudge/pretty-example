@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_button}
 /// Кнопка "Фильтр"
-/// {@endtemplate}
 @immutable
 class FilterButton extends StatelessWidget {
   /// {@template on_tap}
@@ -10,7 +8,7 @@ class FilterButton extends StatelessWidget {
   /// {@endtemplate}
   final VoidCallback onTap;
 
-  /// {@macro filter_button}
+  /// Создает кнопку "Фильтр"
   const FilterButton({
     required this.onTap,
     Key? key,

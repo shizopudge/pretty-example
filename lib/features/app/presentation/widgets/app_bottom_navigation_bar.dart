@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-/// {@template app_bottom_navigation_bar}
 /// Навигационное меню приложения
-/// {@endtemplate}
 @immutable
 class AppBottomNavigationBar extends StatelessWidget {
-  /// {@macro app_bottom_navigation_bar}
+  /// Создает навигационное меню приложения
   const AppBottomNavigationBar({
     Key? key,
   }) : super(key: key);

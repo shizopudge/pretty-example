@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_apply_button}
 /// Кнопка "Применить" на экране "Фильтр
-/// {@endtemplate}
 @immutable
 class FilterApplyButton extends StatelessWidget {
   /// {@macro on_tap}
   final VoidCallback onTap;
 
-  /// {@macro filter_apply_button}
+  /// Создает кнопку "Применить" на экране "Фильтр
   const FilterApplyButton({
     required this.onTap,
     Key? key,

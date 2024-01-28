@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_only_with_discount_switch}
 /// Переключатель "Только со скидкой" на экране "Фильтр"
-/// {@endtemplate}
 @immutable
 class FilterOnlyWithDiscountSwitch extends StatelessWidget {
   /// {@macro on_only_with_discount_changed}
@@ -11,7 +9,7 @@ class FilterOnlyWithDiscountSwitch extends StatelessWidget {
   /// Если true, то switch включен
   final bool isEnabled;
 
-  /// {@macro filter_only_with_discount_switch}
+  /// Создает переключатель "Только со скидкой" на экране "Фильтр"
   const FilterOnlyWithDiscountSwitch({
     required this.onChanged,
     required this.isEnabled,

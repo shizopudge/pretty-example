@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template catalog_list}
 /// Список в каталоге
-/// {@endtemplate}
 @immutable
 class CatalogList extends StatelessWidget {
   /// Информация
@@ -14,7 +12,7 @@ class CatalogList extends StatelessWidget {
   /// {@macro categories_handle}
   final SliverOverlapAbsorberHandle categoriesHandle;
 
-  /// {@macro catalog_list}
+  /// Создает список в каталоге
   const CatalogList({
     required this.data,
     required this.searchFieldHandle,

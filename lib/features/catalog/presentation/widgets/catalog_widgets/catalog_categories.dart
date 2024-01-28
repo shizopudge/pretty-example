@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template catalog_categories}
 /// Категории каталога
-/// {@endtemplate}
 @immutable
 class CatalogCategories extends SliverPersistentHeaderDelegate {
   /// {@template inner_box_is_scrolled}
@@ -13,7 +11,7 @@ class CatalogCategories extends SliverPersistentHeaderDelegate {
   /// {@macro tab_controller}
   final TabController tabController;
 
-  /// {@macro catalog_categories}
+  /// Создает категории каталога
   const CatalogCategories({
     required this.innerBoxIsScrolled,
     required this.tabController,

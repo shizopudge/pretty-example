@@ -1,14 +1,2 @@
-export 'catalog_body.dart';
-export 'catalog_categories.dart';
-export 'catalog_list.dart';
-export 'catalog_tabs_wrapper.dart';
-export 'filter_apply_button.dart';
-export 'filter_body.dart';
-export 'filter_button.dart';
-export 'filter_card.dart';
-export 'filter_divider.dart';
-export 'filter_only_with_discount_switch.dart';
-export 'filter_reset_button.dart';
-export 'filter_section.dart';
-export 'filter_wrap.dart';
-export 'search_field.dart';
+export 'catalog_widgets/catalog_widgets.dart';
+export 'filter_widgets/filter_widgets.dart';

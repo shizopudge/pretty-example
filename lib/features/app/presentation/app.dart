@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pretty_example/features/app/presentation/widgets/app_bottom_navigation_bar.dart';
 import 'package:pretty_example/features/catalog/presentation/pages/pages.dart';
 
-/// {@template app}
 /// Корневой виджет приложения
-/// {@endtemplate}
 @immutable
 class App extends StatelessWidget {
-  /// {@macro app}
+  /// Создает корневой виджет приложения
   const App({
     Key? key,
   }) : super(key: key);

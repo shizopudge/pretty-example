@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// {@template search_field}
-/// Поле поиска
-/// {@endtemplate}
+/// Поле поиска на экране "Каталог"
 @immutable
-class SearchField extends SliverPersistentHeaderDelegate {
+class CatalogSearchField extends SliverPersistentHeaderDelegate {
   /// {@macro on_search_field_tap}
   final VoidCallback onTap;
 
@@ -17,8 +15,8 @@ class SearchField extends SliverPersistentHeaderDelegate {
   /// {@macro search_field_focus_node}
   final FocusNode searchFieldFocusNode;
 
-  /// {@macro search_field}
-  const SearchField({
+  /// Создает поле поиска на экране "Каталог"
+  const CatalogSearchField({
     required this.onTap,
     required this.onSuffixTap,
     required this.searchController,
@@ -110,7 +108,7 @@ class SearchField extends SliverPersistentHeaderDelegate {
   double get minExtent => 82;
 
   @override
-  bool shouldRebuild(covariant SearchField oldDelegate) =>
+  bool shouldRebuild(covariant CatalogSearchField oldDelegate) =>
       oldDelegate.onTap != onTap ||
       oldDelegate.onSuffixTap != onSuffixTap ||
       oldDelegate.searchController != searchController ||

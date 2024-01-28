@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_card}
 /// Карточка фильтра
-/// {@endtemplate}
 @immutable
 class FilterCard extends StatefulWidget {
   /// Текст
@@ -11,7 +9,7 @@ class FilterCard extends StatefulWidget {
   /// Если true, то карточка строится как выбранная
   final bool isSelected;
 
-  /// {@macro filter_card}
+  /// Создает карточку фильтра
   const FilterCard({
     required this.text,
     required this.isSelected,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_example/features/catalog/presentation/widgets/widgets.dart';
 
-/// {@template catalog_body}
 /// Тело экрана "Каталог"
-/// {@endtemplate}
 @immutable
 class CatalogBody extends StatelessWidget {
   /// {@macro on_refresh}
@@ -36,7 +34,7 @@ class CatalogBody extends StatelessWidget {
   /// {@macro categories_handle}
   final SliverOverlapAbsorberHandle categoriesHandle;
 
-  /// {@macro catalog_body}
+  /// Создает тело экрана "Каталог"
   const CatalogBody({
     required this.onRefresh,
     required this.onScroll,
@@ -61,7 +59,7 @@ class CatalogBody extends StatelessWidget {
             handle: searchFieldHandle,
             sliver: SliverPersistentHeader(
               floating: true,
-              delegate: SearchField(
+              delegate: CatalogSearchField(
                 onTap: onSearchFieldTap,
                 onSuffixTap: onSearchFieldSuffixTap,
                 searchController: searchController,

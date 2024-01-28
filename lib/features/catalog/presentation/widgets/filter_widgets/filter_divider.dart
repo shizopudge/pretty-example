@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-/// {@template filter_divider}
-/// Разделитель на экране "Фильтр"
-/// {@endtemplate}
+/// Разделитель секций на экране "Фильтр"
 @immutable
-class FilterDivider extends StatelessWidget {
+class FilterSectionDivider extends StatelessWidget {
   /// Отступы
   final EdgeInsets padding;
 
-  /// {@macro filter_divider}
-  const FilterDivider({
+  /// Создает разделитель секций на экране "Фильтр"
+  const FilterSectionDivider({
     required this.padding,
     Key? key,
   }) : super(key: key);

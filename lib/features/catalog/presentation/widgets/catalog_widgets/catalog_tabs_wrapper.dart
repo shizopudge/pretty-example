@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 typedef TabControllerWidgetBuilder = Widget Function(
     BuildContext context, TabController controller);
 
-/// {@template catalog_tabs_wrapper}
 /// Обертка с табами каталога
-/// {@endtemplate}
 @immutable
 class CatalogTabsWrapper extends StatefulWidget {
   /// {@macro on_tab_changed}
@@ -20,7 +18,7 @@ class CatalogTabsWrapper extends StatefulWidget {
   /// {@macro tab_controller_widget_builder}
   final TabControllerWidgetBuilder builder;
 
-  /// {@macro catalog_tabs_wrapper}
+  /// Создает обертку с табами каталога
   const CatalogTabsWrapper({
     required this.onTabChanged,
     required this.tabsCount,
