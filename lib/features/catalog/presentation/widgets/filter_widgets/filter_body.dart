@@ -7,12 +7,24 @@ class FilterBody extends StatelessWidget {
   /// {@macro on_all_materials_tap}
   final VoidCallback onAllMaterialsTap;
 
+  /// {@macro on_size_card_tap}
+  final VoidCallback onSizeCardTap;
+
+  /// {@macro on_color_card_tap}
+  final VoidCallback onColorCardTap;
+
+  /// {@macro on_color_card_tap}
+  final VoidCallback onMaterialCardTap;
+
   /// {@macro on_only_with_discount_changed}
   final ValueChanged<bool> onOnlyWithDiscountChanged;
 
   /// Создает тело экрана "Фильтр"
   const FilterBody({
     required this.onAllMaterialsTap,
+    required this.onSizeCardTap,
+    required this.onColorCardTap,
+    required this.onMaterialCardTap,
     required this.onOnlyWithDiscountChanged,
     Key? key,
   }) : super(key: key);
@@ -34,6 +46,7 @@ class FilterBody extends StatelessWidget {
                     child: FilterWrap(
                       itemCount: 12,
                       itemBuilder: (context, index) => FilterCard(
+                        onTap: onSizeCardTap,
                         text: '41',
                         isSelected: index == 1,
                       ),
@@ -49,8 +62,11 @@ class FilterBody extends StatelessWidget {
                     title: 'Цвет',
                     child: FilterWrap(
                       itemCount: 7,
-                      itemBuilder: (context, index) =>
-                          FilterCard(text: 'Белый', isSelected: index == 0),
+                      itemBuilder: (context, index) => FilterCard(
+                        onTap: onColorCardTap,
+                        text: 'Белый',
+                        isSelected: index == 0,
+                      ),
                     ),
                   ),
                   // Разделитель
@@ -63,6 +79,7 @@ class FilterBody extends StatelessWidget {
                     child: FilterWrap(
                       itemCount: 12,
                       itemBuilder: (context, index) => FilterCard(
+                        onTap: onMaterialCardTap,
                         text: 'Хлопок',
                         isSelected: index == 4,
                       ),

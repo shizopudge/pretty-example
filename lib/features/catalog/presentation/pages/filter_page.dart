@@ -22,6 +22,9 @@ class FilterPage extends StatelessWidget {
         ),
         body: FilterBody(
           onAllMaterialsTap: _onAllMaterialsTap,
+          onSizeCardTap: _onSizeCardTap,
+          onColorCardTap: _onColorCardTap,
+          onMaterialCardTap: _onMaterialCardTap,
           onOnlyWithDiscountChanged: _onOnlyWithDiscountChanged,
         ),
         floatingActionButton: FilterApplyButton(
@@ -41,8 +44,23 @@ class FilterPage extends StatelessWidget {
   /// {@endtemplate}
   Future<void> _onAllMaterialsTap() => Future<void>.value();
 
+  /// {@template on_size_card_tap}
+  /// Обработчик нажатия на карточку размера
+  /// {@endtemplate}
+  Future<void> _onSizeCardTap() => Future<void>.value();
+
+  /// {@template on_color_card_tap}
+  /// Обработчик нажатия на карточку цвета
+  /// {@endtemplate}
+  Future<void> _onColorCardTap() => Future<void>.value();
+
+  /// {@template on_color_card_tap}
+  /// Обработчик нажатия на карточку материала
+  /// {@endtemplate}
+  Future<void> _onMaterialCardTap() => Future<void>.value();
+
   /// {@template on_only_with_discount_changed}
-  /// Обрбаотчик на смену значения свитча "Только со скидкой"
+  /// Обработчик на смену значения свитча "Только со скидкой"
   /// {@endtemplate}
   Future<void> _onOnlyWithDiscountChanged(bool isOnlyWithDiscount) =>
       Future<void>.value();

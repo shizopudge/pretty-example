@@ -3,8 +3,16 @@ import 'package:flutter/material.dart';
 /// Навигационное меню приложения
 @immutable
 class AppBottomNavigationBar extends StatelessWidget {
+  /// {@macro on_tap}
+  final ValueChanged<int> onTap;
+
+  /// Текущий индекс
+  final int currentIndex;
+
   /// Создает навигационное меню приложения
   const AppBottomNavigationBar({
+    required this.onTap,
+    required this.currentIndex,
     Key? key,
   }) : super(key: key);
 
@@ -12,6 +20,8 @@ class AppBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) => SafeArea(
         top: false,
         child: BottomNavigationBar(
+          onTap: onTap,
+          currentIndex: currentIndex,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(

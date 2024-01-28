@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 /// Карточка фильтра
 @immutable
 class FilterCard extends StatefulWidget {
+  /// {@macro on_tap}
+  final VoidCallback onTap;
+
   /// Текст
   final String text;
 
@@ -11,6 +14,7 @@ class FilterCard extends StatefulWidget {
 
   /// Создает карточку фильтра
   const FilterCard({
+    required this.onTap,
     required this.text,
     required this.isSelected,
     Key? key,
@@ -72,18 +76,22 @@ class _FilterCardState extends State<FilterCard>
   }
 
   @override
-  Widget build(BuildContext context) => DecoratedBoxTransition(
-        decoration: _decorationAnimation,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
-          child: AnimatedBuilder(
-            animation: _textColorAnimation,
-            builder: (context, child) => Text(
-              widget.text,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge
-                  ?.copyWith(color: _textColorAnimation.value),
+  Widget build(BuildContext context) => GestureDetector(
+        onTap: widget.onTap,
+        behavior: HitTestBehavior.opaque,
+        child: DecoratedBoxTransition(
+          decoration: _decorationAnimation,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+            child: AnimatedBuilder(
+              animation: _textColorAnimation,
+              builder: (context, child) => Text(
+                widget.text,
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge
+                    ?.copyWith(color: _textColorAnimation.value),
+              ),
             ),
           ),
         ),
