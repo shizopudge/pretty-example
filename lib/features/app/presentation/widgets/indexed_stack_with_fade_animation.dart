@@ -69,9 +69,9 @@ class _IndexedStackWithFadeAnimationState
       );
 
   /// Анимирует виджет
-  void _animate(covariant IndexedStackWithFadeAnimation oldWidget) {
+  Future<void> _animate(covariant IndexedStackWithFadeAnimation oldWidget) {
     final isIndexChanged = oldWidget.currentIndex != widget.currentIndex;
-    if (!isIndexChanged) return;
-    _animationController.forward(from: 0.0);
+    if (!isIndexChanged) return Future<void>.value();
+    return _animationController.forward(from: 0.0);
   }
 }

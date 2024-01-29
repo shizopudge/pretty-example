@@ -110,13 +110,13 @@ class _FilterCardState extends State<FilterCard>
       );
 
   /// Анимирует виджет, если поле widget.isSelected изменилось
-  void _animate(covariant FilterCard oldWidget) {
+  Future<void> _animate(covariant FilterCard oldWidget) {
     final isSelectionChanged = oldWidget.isSelected != widget.isSelected;
-    if (!isSelectionChanged) return;
+    if (!isSelectionChanged) return Future<void>.value();
     if (widget.isSelected) {
-      _animationController.forward();
+      return _animationController.forward();
     } else {
-      _animationController.reverse();
+      return _animationController.reverse();
     }
   }
 }

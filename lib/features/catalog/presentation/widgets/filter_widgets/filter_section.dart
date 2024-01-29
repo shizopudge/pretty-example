@@ -34,30 +34,33 @@ class FilterSection extends StatelessWidget {
     // Обработчик нажатия на кнопку "Все"
     final onAllTap = this.onAllTap;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Если onAllTap передан, тогда строиться строка с заголовком и
-          // кнопкой "Все", иначе строиться просто заголовок
-          if (onAllTap != null) ...[
-            Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Если onAllTap передан, тогда строиться строка с заголовком и
+        // кнопкой "Все", иначе строиться просто заголовок
+        if (onAllTap != null) ...[
+          Padding(
+            padding: const EdgeInsets.only(left: 16, right: 8),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Flexible(child: title),
                 _AllButton(onTap: onAllTap),
               ],
             ),
-          ] else ...[
-            title
-          ],
-          Padding(
-            padding: const EdgeInsets.only(top: 12),
-            child: child,
           ),
+        ] else ...[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: title,
+          )
         ],
-      ),
+        Padding(
+          padding: const EdgeInsets.only(top: 12, left: 20, right: 20),
+          child: child,
+        ),
+      ],
     );
   }
 }
@@ -77,9 +80,9 @@ class _AllButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => ElevatedButton(
+  Widget build(BuildContext context) => TextButton(
         onPressed: onTap,
-        style: ElevatedButton.styleFrom(
+        style: TextButton.styleFrom(
           elevation: 0,
           padding: EdgeInsets.zero,
           shape: const CircleBorder(),
